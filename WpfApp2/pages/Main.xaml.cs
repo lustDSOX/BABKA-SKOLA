@@ -65,5 +65,10 @@ namespace WpfApp2.pages
             button.Content = panel;
             return button;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.Frame.Navigate(new User());
+        }
     }
 }

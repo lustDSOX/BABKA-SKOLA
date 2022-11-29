@@ -7,13 +7,32 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User" Background="white">
+    <Page.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Fill="Transparent" StrokeThickness="3" Stroke="#04A0FF" VerticalAlignment="Top" Height="1in" x:Name="theEllipse"/>
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0"/>
+            </Grid>
+        </ControlTemplate>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Style="{StaticResource TriggerStyle}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="1in" Margin="0 30 30 0" Grid.RowSpan="2">
-            <Image Source="../images/user.png" />
+        <Button Style="{StaticResource TriggerStyle}" Template="{DynamicResource ButtonControlTemplate}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="1in" Width="1in" Margin="0 30 30 0" Grid.RowSpan="2">
+            <Button.Content>
+                <Image Source="../images/user.png" Stretch="UniformToFill"/>
+            </Button.Content>
         </Button>
+        <Button Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Left" Margin="20 0" Content="BACK"/>
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Page>
